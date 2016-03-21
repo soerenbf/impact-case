@@ -1,0 +1,19 @@
+{
+  "filesGlob": [
+    "**/*.ts",
+    "**/*.tsx",
+    "!node_modules/**"
+  ],
+  "compilerOptions": {},
+  "files": [
+    "typings/typings/browser.d.ts",
+    "typings/typings/browser/ambient/angular/index.d.ts",
+    "typings/typings/browser/ambient/jquery/index.d.ts",
+    "typings/typings/main.d.ts",
+    "typings/typings/main/ambient/angular/index.d.ts",
+    "typings/typings/main/ambient/jquery/index.d.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+}

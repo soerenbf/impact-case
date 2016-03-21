@@ -1,0 +1,18 @@
+{
+  "name": "angular-seed-ts",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.1",
+  "homepage": "https://github.com/soerenbf/angular-seed-ts",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+  	"angular": "^1.4.0",
+  	"angular-bootstrap": "^0.13",
+    "angular-mocks": "^1.4.0",
+  	"angular-ui-router": "^0.2",
+    "bootstrap": "^3.1",
+    "normalize-css": "normalize.css#^4.0.0",
+    "animate.css": "^3.5.1",
+    "fontawesome": "^4.2.0"
+  }
+}
