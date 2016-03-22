@@ -1,5 +1,5 @@
 <div class="row" id="wine-list" class="clearfix">
-    <a ui-sref="wine({id: wine.id})" class="col-xs-12 wine-item" ng-repeat="wine in listCtrl.wines" title="{{wine.name}}">
+    <a ui-sref="wine({id: $index})" class="col-xs-12 wine-item" ng-repeat="wine in listCtrl.wines" title="{{wine.name}}">
         <div class="row">
             <div class="col-xs-8 wine-info">
                 <h4>{{wine.name}}</h4>
