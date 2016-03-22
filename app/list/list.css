@@ -64,3 +64,8 @@ body h4 {
   -o-transform: translate(-50%, -100%);
   transform: translate(-50%, -100%);
 }
+@media (min-width: 768px) {
+  #new-wine-container {
+    width: inherit;
+  }
+}
