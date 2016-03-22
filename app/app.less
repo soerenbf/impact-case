@@ -1,6 +1,16 @@
 @main-color: #c0392b;
 @white: #ecf0f1;
 @black: #4c4c4c;
+@silver: #bdc3c7;
+@yellow: #f1c40f;
+
+.translate(@value) {
+  -webkit-transform: @value;
+  -moz-transform:    @value;
+  -ms-transform:     @value;
+  -o-transform:      @value;
+  transform:         @value;
+}
 
 body {
     font-family: 'Trebuchet MS', 'Sans serif';
@@ -16,5 +26,9 @@ body {
         margin: 0;
         padding: 20px 0;
         background: @main-color;
+    }
+
+    h2, h3, h4 {
+        color: @main-color;
     }
 }

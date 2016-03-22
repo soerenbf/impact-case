@@ -1,5 +1,19 @@
-<div id="wine-list" class="clearfix">
+<div class="row" id="wine-list" class="clearfix">
     <a ui-sref="wine({id: wine.id})" class="col-xs-12 wine-item" ng-repeat="wine in listCtrl.wines" title="{{wine.name}}">
-        <h4>{{wine.name}}</h2>
+        <div class="row">
+            <div class="col-xs-8 wine-info">
+                <h4>{{wine.name}}</h4>
+                <ul class="list-unstyled">
+                    <li>{{wine.varietal}}</li>
+                    <li>{{wine.year}}</li>
+                </ul>
+            </div>
+            <div class="col-xs-4 wine-rating-wrapper">
+                <div class="wine-rating">
+                    <i class="fa fa-star"></i>
+                    {{wine.rating}}
+                </div>
+            </div>
+        </div>
     </a>
 </div>

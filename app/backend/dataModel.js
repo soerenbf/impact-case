@@ -18,9 +18,9 @@
 
         function activate() {
             wines = [
-                {id: 144436, name: 'Bertani Valpolicella', year: 2011, type: 'Ripasso', rating: 3.5},
-                {id: 151951, name: 'Dom Perignon', year: 2003, type: 'Rosé', rating: 4},
-                {id: 131268, name: 'Cloudy Bay', year: 2012, type: 'Chardonnay', rating: 5}
+                {id: 1, externalId: 144436, name: 'Bertani Valpolicella', year: 2011, varietal: 'Ripasso', rating: 3},
+                {id: 2, externalId: 151951, name: 'Dom Perignon', year: 2003, varietal: 'Rosé', rating: 4},
+                {id: 3, externalId: 131268, name: 'Cloudy Bay', year: 2012, varietal: 'Chardonnay', rating: 5}
             ];
         }
 
@@ -29,7 +29,7 @@
         }
 
         function getWineById(id) {
-            
+
         }
     }
 })();
