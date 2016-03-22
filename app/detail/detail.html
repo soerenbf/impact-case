@@ -1,3 +1,11 @@
-<div class="detail-wrapper">
-
+<div id="detail" class="row">
+    <div class="content col-xs-12">
+        <h3>{{detailCtrl.name}}</h3>
+        <ul class="list-inline">
+            <li>{{detailCtrl.varietal}}</li>
+            <li>{{detailCtrl.year}}</li>
+        </ul>
+        <img ng-src="{{detailCtrl.imageUrl}}" alt="" />
+        <div ng-if="detailCtrl.category" id="wine-category">#{{detailCtrl.category}}</div>
+    </div>
 </div>

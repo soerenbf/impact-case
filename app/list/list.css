@@ -1,5 +1,6 @@
 body {
   font-family: 'Trebuchet MS', 'Sans serif';
+  background: #ffffff;
 }
 body a,
 body a:hover,
@@ -9,7 +10,7 @@ body a:visited {
 }
 body h1 {
   text-align: center;
-  color: #ecf0f1;
+  color: #ffffff;
   margin: 0;
   padding: 20px 0;
   background: #c0392b;

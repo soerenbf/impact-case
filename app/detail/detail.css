@@ -1,0 +1,56 @@
+body {
+  font-family: 'Trebuchet MS', 'Sans serif';
+  background: #ffffff;
+}
+body a,
+body a:hover,
+body a:visited {
+  color: #4c4c4c;
+  text-decoration: none;
+}
+body h1 {
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+  padding: 20px 0;
+  background: #c0392b;
+}
+body h2,
+body h3,
+body h4 {
+  color: #c0392b;
+}
+#detail h3 {
+  margin: 20px 0 5px 0;
+  text-align: center;
+}
+#detail ul {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  display: inline-block;
+  margin: 0;
+}
+#detail img {
+  display: block;
+  width: 50%;
+  margin: 10px auto;
+}
+#detail #wine-category {
+  color: #ffffff;
+  font-size: 0.8em;
+  display: inline-block;
+  padding: 10px;
+  background: #c0392b;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
