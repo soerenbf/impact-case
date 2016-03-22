@@ -7,6 +7,6 @@
     function AppController() {
 
         vm = this;
-        vm.pageTitle ='brand new app';
+        vm.pageTitle ='Filips Fine Wines';
     };
 })();

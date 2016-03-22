@@ -9,8 +9,8 @@ module.exports = function (config) {
             'app/bower_components/angular-mocks/angular-mocks.js',
             'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
             'app/**/*module.js',
-            'app/common/**/*.js',
-            'app/home/**/*.js',
+            'app/detail/**/*.js',
+            'app/list/**/*.js',
             'app/*.js'
         ],
 

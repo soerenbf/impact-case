@@ -1,6 +1,13 @@
 (function () {
-    angular.module('app')
-        .config(['$stateProvider', '$urlRouterProvider', function appConfig($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('/');
-        }])
+    'use strict'
+
+    angular
+        .module('app')
+        .config(routeConfig);
+
+    routeConfig.$inject = ['$urlRouterProvider'];
+
+    function routeConfig($urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
+    }
 })();
