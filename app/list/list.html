@@ -1,3 +1,5 @@
-<div class="wine-list-wrapper">
-    {{listCtrl.test}}
+<div id="wine-list" class="clearfix">
+    <a ui-sref="wine({id: wine.id})" class="col-xs-12 wine-item" ng-repeat="wine in listCtrl.wines" title="{{wine.name}}">
+        <h4>{{wine.name}}</h2>
+    </a>
 </div>

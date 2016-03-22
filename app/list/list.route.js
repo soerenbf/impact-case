@@ -8,7 +8,7 @@
     routeConfig.$inject = ['$stateProvider'];
 
     function routeConfig($stateProvider) {
-        $stateProvider.state('home', {
+        $stateProvider.state('list', {
             url: '/',
             views: {
                 'main': {

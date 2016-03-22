@@ -5,16 +5,23 @@
         .module('app')
         .controller('ListController', ListController);
 
-    ListController.$inject = [];
+    ListController.$inject = ['dataservice'];
 
     /* @ngInject */
-    function ListController() {
+    function ListController(dataservice) {
         var vm = this;
+        vm.wines;
 
         activate();
 
         function activate() {
+            getWines();
+        }
 
+        function getWines() {
+            dataservice.getWines().then(function(wines) {
+                vm.wines = wines;
+            });
         }
     }
 })();

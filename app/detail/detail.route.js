@@ -8,7 +8,7 @@
     routeConfig.$inject = ['$stateProvider'];
 
     function routeConfig($stateProvider) {
-        $stateProvider.state('wineDetail', {
+        $stateProvider.state('wine', {
             url: '/wine/:id',
             views: {
                 'main': {

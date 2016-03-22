@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
-<head ng-controller="AppController as appCtrl">
+<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7" ng-controller="AppController as appCtrl"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8" ng-controller="AppController as appCtrl"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9" ng-controller="AppController as appCtrl"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js" ng-controller="AppController as appCtrl"> <!--<![endif]-->
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title ng-bind="appCtrl.pageTitle"></title>
@@ -22,18 +22,16 @@
 
 </head>
 <body>
+    <h1>{{appCtrl.pageTitle}}</h1>
     <div class="container" ui-view="main"></div>
 
-    <!-- WARNING: You will want to load all of your *.module.js files first since these
-    are where the definitions for the modules are.  Angular will barf if you reference them
-    before they are defined -->
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="bower_components/angular-mocks/angular-mocks.js"></script>
 
-    <!-- Load Services First -->
+    <!-- Application -->
     <script type="text/javascript" src="app.module.js"></script>
     <script type="text/javascript" src="app.route.js"></script>
     <script type="text/javascript" src="app.controller.js"></script>
@@ -44,9 +42,12 @@
     <script type="text/javascript" src="detail/detail.route.js"></script>
     <script type="text/javascript" src="detail/detail.controller.js"></script>
 
+    <!-- Services -->
+    <script type="text/javascript" src="backend/dataservice.js"></script>
+
     <!-- Backend mock. Uncomment for mocking functionality. -->
-    <script src="backendMock/dataModel.js"></script>
-    <script src="backendMock/backendMock.js"></script>
+    <script type="text/javascript" src="backend/dataModel.js"></script>
+    <script type="text/javascript" src="backend/backendMock.js"></script>
 
 </body>
 </html>
