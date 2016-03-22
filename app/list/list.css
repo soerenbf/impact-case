@@ -1,3 +1,7 @@
+html,
+body {
+  height: 100%;
+}
 body {
   font-family: 'Trebuchet MS', 'Sans serif';
   background: #ffffff;
@@ -32,4 +36,31 @@ body h4 {
 }
 #wine-list .wine-item .wine-rating-wrapper .wine-rating .fa-star {
   color: #f1c40f;
+}
+#new-wine-container {
+  border-top: 2px solid #c0392b;
+  position: fixed;
+  bottom: 0;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  width: 100%;
+}
+#new-wine-container button {
+  color: #ffffff;
+  background: #c0392b;
+  border-radius: 0;
+  border: 0;
+  width: 70px;
+  height: 70px;
+  font-size: 2em;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+  -moz-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  -o-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
 }

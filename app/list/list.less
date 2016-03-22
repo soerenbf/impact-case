@@ -15,3 +15,22 @@
         }
     }
 }
+
+#new-wine-container {
+    border-top: 2px solid @main-color;
+    position: fixed; bottom: 0;
+    .translate(translateY(100%));
+    width: 100%;
+
+    button {
+        @button-size: 70px;
+        color: @white;
+        background: @main-color;
+        border-radius: 0;
+        border: 0;
+        width: @button-size; height: @button-size;
+        font-size: 2em;
+        position: relative; left: 50%;
+        .translate(translate(-50%, -100%));
+    }
+}
