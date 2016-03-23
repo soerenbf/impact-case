@@ -5,7 +5,7 @@
             <li>{{detailCtrl.varietal}}</li>
             <li>{{detailCtrl.year}}</li>
         </ul>
-        <img ng-src="{{detailCtrl.imageUrl}}" alt="" />
+        <img ng-if="detailCtrl.imageUrl" ng-src="{{detailCtrl.imageUrl}}" alt="" />
         <div ng-if="detailCtrl.category" id="wine-category">#{{detailCtrl.category}}</div>
     </div>
 </div>

@@ -1,25 +1,24 @@
 <div class="row" id="wine-list" class="clearfix">
-    <a ui-sref="wine({id: wine.id})" class="col-xs-12 wine-item" ng-repeat="wine in listCtrl.wines" title="{{wine.name}}">
-        <div class="row">
-            <div class="col-xs-8 wine-info">
-                <h4>{{wine.name}}</h4>
-                <ul class="list-unstyled">
-                    <li>{{wine.varietal}}</li>
-                    <li>{{wine.year}}</li>
-                </ul>
-            </div>
-            <div class="col-xs-4 wine-rating-wrapper">
-                <div class="wine-rating">
-                    <i class="fa fa-star"></i>
-                    {{wine.rating}}
-                </div>
-            </div>
-        </div>
-    </a>
+    <div ng-show="listCtrl.showNewWine" list-item class="col-xs-12 wine-item"></div>
+    <a list-item ui-sref="wine({id: wine.id})" class="col-xs-12 wine-item" ng-repeat="wine in listCtrl.wines" title="{{wine.name}}"></a>
 </div>
-<div id="new-wine-container" class="row">
-    <button type="button" name="+" class="btn btn-default">+</button>
+<div id="new-wine-container" class="row" ng-class="{active: listCtrl.showNewWine}">
+    <button type="button" name="+" class="btn btn-default" ng-click="listCtrl.toggleNewWine()">{{listCtrl.newWineButtonText}}</button>
     <div class="col-xs-12">
-
+        <form>
+            <div class="form-group">
+                <label for="wineName">Name of wine</label>
+                <input type="text" id="wineName" value="" placeholder="e.g. Masi Costasera" ng-model="listCtrl.newWine.name">
+            </div>
+            <div class="form-group">
+                <label for="wineVarietal">Wine varietal</label>
+                <input type="text" id="wineVarietal" value="" placeholder="e.g. Amarone" ng-model="listCtrl.newWine.varietal">
+            </div>
+            <div class="form-group">
+                <label for="wineYear">Production year</label>
+                <input type="number" id="wineYear" value="" placeholder="e.g 2010" ng-model="listCtrl.newWine.year">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
     </div>
 </div>

@@ -13,6 +13,7 @@
 
         this.getWines = getWines;
         this.getWineById = getWineById;
+        this.addWine = addWine;
         this.getExternalWineInfo = getExternalWineInfo;
 
         function getWines() {
@@ -25,6 +26,14 @@
             return $http.get('/wine/' + id).then(function(response) {
                 return response.data;
             });
+        }
+
+        function addWine(name, varietal, year, rating) {
+            console.log('Adding wine: ' + name + ' ' + varietal + ' ' + year);
+        }
+
+        function linkWineToExternalWine(wineId, externalId) {
+            console.log('Linking wine: ' + wineId + ' and ' + externalId);
         }
 
         function getExternalWineInfo(externalId) {

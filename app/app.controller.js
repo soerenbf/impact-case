@@ -5,8 +5,8 @@
     AppController.$inject = [];
 
     function AppController() {
-
         vm = this;
+        
         vm.pageTitle ='Filips Fine Wines';
     };
 })();

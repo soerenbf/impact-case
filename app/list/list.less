@@ -3,6 +3,7 @@
 #wine-list {
     .wine-item {
         border-bottom: 1px solid @silver;
+        height: 90px;
 
         .wine-rating-wrapper {
             position: relative; top: 25px;
@@ -11,16 +12,23 @@
                 .fa-star {
                     color: @yellow;
                 }
+
+                .fa-star.grey {
+                    color: @silver;
+                }
             }
         }
     }
 }
 
+@new-wine-height: 200px;
 #new-wine-container {
     border-top: 3px solid @main-color;
+    height: @new-wine-height;
     position: fixed; bottom: 3px;
     .translate(translateY(100%));
     width: 100%;
+    .transition(0.2s linear bottom);
 
     button {
         @button-size: 70px;
@@ -30,9 +38,14 @@
         border: 0;
         width: @button-size; height: @button-size;
         font-size: 2.5em;
-        position: relative; left: 50%;
+        position: absolute; left: 50%;
         .translate(translate(-50%, -100%));
+        outline: none;
     }
+}
+
+#new-wine-container.active {
+    bottom: @new-wine-height;
 }
 
 @media (min-width: 768px) {

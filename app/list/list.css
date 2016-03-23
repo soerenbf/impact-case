@@ -26,6 +26,7 @@ body h4 {
 }
 #wine-list .wine-item {
   border-bottom: 1px solid #bdc3c7;
+  height: 90px;
 }
 #wine-list .wine-item .wine-rating-wrapper {
   position: relative;
@@ -37,8 +38,12 @@ body h4 {
 #wine-list .wine-item .wine-rating-wrapper .wine-rating .fa-star {
   color: #f1c40f;
 }
+#wine-list .wine-item .wine-rating-wrapper .wine-rating .fa-star.grey {
+  color: #bdc3c7;
+}
 #new-wine-container {
   border-top: 3px solid #c0392b;
+  height: 200px;
   position: fixed;
   bottom: 3px;
   -webkit-transform: translateY(100%);
@@ -47,6 +52,10 @@ body h4 {
   -o-transform: translateY(100%);
   transform: translateY(100%);
   width: 100%;
+  -webkit-transition: 0.2s linear bottom;
+  -moz-transition: 0.2s linear bottom;
+  -o-transition: 0.2s linear bottom;
+  transition: 0.2s linear bottom;
 }
 #new-wine-container button {
   color: #ffffff;
@@ -56,13 +65,17 @@ body h4 {
   width: 70px;
   height: 70px;
   font-size: 2.5em;
-  position: relative;
+  position: absolute;
   left: 50%;
   -webkit-transform: translate(-50%, -100%);
   -moz-transform: translate(-50%, -100%);
   -ms-transform: translate(-50%, -100%);
   -o-transform: translate(-50%, -100%);
   transform: translate(-50%, -100%);
+  outline: none;
+}
+#new-wine-container.active {
+  bottom: 200px;
 }
 @media (min-width: 768px) {
   #new-wine-container {
