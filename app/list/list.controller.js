@@ -60,7 +60,10 @@
         }
 
         function resetForm() {
-            vm.newWine = {name: '', varietal: '', year: '', rating: 0};
+            vm.newWine.name = '';
+            vm.newWine.varietal = '';
+            vm.newWine.year = '';
+            vm.newWine.rating = 0;
         }
     }
 })();

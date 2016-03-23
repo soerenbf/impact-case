@@ -44,7 +44,7 @@ body .fa-star.grey {
 #new-wine-container {
   border-top: 3px solid #c0392b;
   background: #ffffff;
-  height: 280px;
+  height: 300px;
   position: fixed;
   bottom: 3px;
   -webkit-transform: translateY(100%);
@@ -77,7 +77,7 @@ body .fa-star.grey {
 }
 #new-wine-container input {
   width: 100%;
-  height: 30px;
+  height: 35px;
 }
 #new-wine-container .form-group:first-of-type input {
   margin-top: 20px;
@@ -109,9 +109,10 @@ body .fa-star.grey {
   height: 40px;
   color: #ffffff;
   background: #c0392b;
+  outline: none;
 }
 #new-wine-container.active {
-  bottom: 280px;
+  bottom: 300px;
 }
 @media (min-width: 768px) {
   #new-wine-container {

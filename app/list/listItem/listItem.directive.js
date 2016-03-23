@@ -18,12 +18,6 @@
         function linkFunc(scope, el, attr) {
             if (!scope.wine) {
                 scope.wine = scope.listCtrl.newWine;
-
-                scope.$watch(function() {
-                    return scope.listCtrl.newWine;
-                }, function(newVal, oldVal) {
-                    scope.wine = newVal;
-                }, true);
             }
         }
     }
