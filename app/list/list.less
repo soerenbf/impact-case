@@ -9,28 +9,22 @@
             position: relative; top: 25px;
             .wine-rating {
                 font-size: 2em;
-                .fa-star {
-                    color: @yellow;
-                }
-
-                .fa-star.grey {
-                    color: @silver;
-                }
             }
         }
     }
 }
 
-@new-wine-height: 200px;
+@new-wine-height: 280px;
 #new-wine-container {
     border-top: 3px solid @main-color;
+    background: @white;
     height: @new-wine-height;
     position: fixed; bottom: 3px;
     .translate(translateY(100%));
     width: 100%;
     .transition(0.2s linear bottom);
 
-    button {
+    #toggle-new-wine-btn {
         @button-size: 70px;
         color: @white;
         background: @main-color;
@@ -41,6 +35,38 @@
         position: absolute; left: 50%;
         .translate(translate(-50%, -100%));
         outline: none;
+    }
+
+    input {
+        width: 100%;
+        height: 30px;
+    }
+
+    .form-group:first-of-type {
+        input {
+            margin-top: 20px;
+        }
+    }
+
+    #rating-wrapper {
+        display: inline-block;
+        position: relative; left: 50%;
+        .translate(translateX(-50%));
+        margin-bottom: 10px;
+
+        .fa-star {
+            font-size: 2.5em;
+            margin: 10px;
+        }
+    }
+
+    #submit-wine-btn {
+        position: relative; left: 50%;
+        .translate(translateX(-50%));
+        width: 100px;
+        height: 40px;
+        color: @white;
+        background: @main-color;
     }
 }
 

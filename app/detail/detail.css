@@ -24,6 +24,12 @@ body h3,
 body h4 {
   color: #c0392b;
 }
+body .fa-star {
+  color: #f1c40f;
+}
+body .fa-star.grey {
+  color: #bdc3c7;
+}
 #detail h3 {
   margin: 20px 0 5px 0;
   text-align: center;

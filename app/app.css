@@ -24,3 +24,9 @@ body h3,
 body h4 {
   color: #c0392b;
 }
+body .fa-star {
+  color: #f1c40f;
+}
+body .fa-star.grey {
+  color: #bdc3c7;
+}

@@ -14,15 +14,11 @@
         vm.wines;
         vm.showNewWine = false;
         vm.newWineButtonText = vm.showNewWine ? '-' : '+';
+        vm.newWine = {name: '', varietal: '', year: '', rating: 0};
         vm.toggleNewWine = toggleNewWine;
-
-        //New Wine Form model
-        vm.newWine = {
-            name: '',
-            varietal: '',
-            year: '',
-            rating: 0
-        };
+        vm.setRating = setRating;
+        vm.starIsInactive = starIsInactive;
+        vm.submitNewWine = submitNewWine;
 
         activate();
 
@@ -43,7 +39,6 @@
             if (!vm.showNewWine) {
                 resetForm();
             }
-
         }
 
         function addWine(name, varietal, year, rating) {
@@ -52,13 +47,20 @@
             })*/;
         }
 
+        function setRating(rating) {
+            vm.newWine.rating = rating;
+        }
+
+        function starIsInactive(index) {
+            return index > vm.newWine.rating;
+        }
+
+        function submitNewWine() {
+
+        }
+
         function resetForm() {
-            vm.newWine = {
-                name: '',
-                varietal: '',
-                year: '',
-                rating: 0
-            };
+            vm.newWine = {name: '', varietal: '', year: '', rating: 0};
         }
     }
 })();
