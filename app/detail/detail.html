@@ -6,6 +6,7 @@
             <li>{{detailCtrl.year}}</li>
         </ul>
         <img ng-if="detailCtrl.imageUrl" ng-src="{{detailCtrl.imageUrl}}" alt="" />
+        <wine-rating rating="{{detailCtrl.rating}}"></wine-rating>
         <div ng-if="detailCtrl.category" id="wine-category">#{{detailCtrl.category}}</div>
     </div>
 </div>

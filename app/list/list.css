@@ -82,21 +82,6 @@ body .fa-star.grey {
 #new-wine-container .form-group:first-of-type input {
   margin-top: 20px;
 }
-#new-wine-container #rating-wrapper {
-  display: inline-block;
-  position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-  margin-bottom: 10px;
-}
-#new-wine-container #rating-wrapper .fa-star {
-  font-size: 2.5em;
-  margin: 10px;
-}
 #new-wine-container #submit-wine-btn {
   position: relative;
   left: 50%;

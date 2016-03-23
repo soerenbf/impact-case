@@ -41,9 +41,10 @@
 
         function getExternalWineInfo(externalId) {
             var url = apiBasePath + '?filter=product(' + externalId + ')&apikey=' + common.wineApiKey;
-
+            console.log(externalId);
             return $http.get(url).then(function(response) {
                 var wine = response.data.Products.List[0];
+                console.log(wine);
 
                 var obj = {
                     category: wine.Varietal.WineType.Name,

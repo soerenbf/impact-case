@@ -5,38 +5,32 @@
         .module('app')
         .controller('DetailController', DetailController);
 
-    DetailController.$inject = ['$stateParams', 'dataservice'];
+    DetailController.$inject = ['dataservice', 'wineData'];
 
     /* @ngInject */
-    function DetailController($stateParams, dataservice) {
+    function DetailController(dataservice, wineData) {
         var vm = this;
 
+        console.log(wineData);
+
         //From datamodel.
-        vm.id = $stateParams.id;
-        vm.name = '';
-        vm.varietal = '';
-        vm.year = '';
+        vm.id = wineData.id;
+        vm.name = wineData.name;
+        vm.varietal = wineData.varietal;
+        vm.year = wineData.year;
+        vm.rating = wineData.rating;
+        vm.externalId = wineData.externalId;
 
         //From api.wine.com
-        vm.imageUrl;
-        vm.category;
+        vm.imageUrl = wineData.imageUrl;
+        vm.category = wineData.category;
 
         activate();
 
         function activate() {
-            getWine(vm.id);
-        }
-
-        function getWine(id) {
-            dataservice.getWineById(id).then(function(wine) {
-                vm.name = wine.name;
-                vm.varietal = wine.varietal;
-                vm.year = wine.year;
-
-                if (wine.externalId) {
-                    getExternalInfo(wine.externalId);
-                }
-            });
+            if (vm.externalId) {
+                getExternalInfo(vm.externalId);
+            }
         }
 
         function getExternalInfo(externalId) {

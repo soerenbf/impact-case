@@ -7,9 +7,12 @@
 
     routeConfig.$inject = ['$stateProvider'];
 
-    function routeConfig($stateProvider) {
+    function routeConfig($stateProvider, dataservice) {
         $stateProvider.state('wine', {
             url: '/wine/:id',
+            resolve: {
+                wineData: wineData
+            },
             views: {
                 'main': {
                     controller: 'DetailController',
@@ -18,5 +21,13 @@
                 }
             }
         });
+
+        wineData.$inject = ['$stateParams', 'dataservice'];
+
+        function wineData($stateParams, dataservice) {
+            return dataservice.getWineById($stateParams.id).then(function(wine) {
+                return wine;
+            });
+        }
     }
 })();

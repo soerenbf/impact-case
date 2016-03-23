@@ -5,10 +5,10 @@
         .module('app')
         .controller('ListController', ListController);
 
-    ListController.$inject = ['dataservice'];
+    ListController.$inject = ['$scope', 'dataservice'];
 
     /* @ngInject */
-    function ListController(dataservice) {
+    function ListController($scope, dataservice) {
         var vm = this;
 
         vm.wines;
@@ -17,13 +17,13 @@
         vm.newWine = {name: '', varietal: '', year: '', rating: 0};
         vm.toggleNewWine = toggleNewWine;
         vm.addWine = addWine;
-        vm.setRating = setRating;
-        vm.starIsInactive = starIsInactive;
 
         activate();
 
         function activate() {
             getWines();
+
+            $scope.$on('ratingUpdate', setRating);
         }
 
         function getWines() {
@@ -44,11 +44,11 @@
         function addWine() {
             dataservice.addWine(vm.newWine).then(function(wines) {
                 vm.wines = wines;
-                console.log(wines);
+                toggleNewWine();
             });
         }
 
-        function setRating(rating) {
+        function setRating(e, rating) {
             vm.newWine.rating = rating;
         }
 

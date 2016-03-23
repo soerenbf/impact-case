@@ -1,0 +1,3 @@
+<div id="rating-wrapper">
+    <i ng-repeat="i in [1, 2, 3, 4, 5] track by $index" id="{{'rating-' + i}}" class="fa fa-star" ng-class="{grey: isInactive(i)}" ng-click="setRating(i)"></i>
+</div>

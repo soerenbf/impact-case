@@ -30,11 +30,8 @@ body .fa-star {
 body .fa-star.grey {
   color: #bdc3c7;
 }
-#detail h3 {
-  margin: 20px 0 5px 0;
-  text-align: center;
-}
-#detail ul {
+#rating-wrapper {
+  display: inline-block;
   position: relative;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -42,24 +39,9 @@ body .fa-star.grey {
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
-  display: inline-block;
-  margin: 0;
+  margin-bottom: 10px;
 }
-#detail img {
-  display: block;
-  width: 50%;
-  margin: 10px auto;
-}
-#detail #wine-category {
-  color: #ffffff;
-  display: inline-block;
-  padding: 10px;
-  background: #c0392b;
-  position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
+#rating-wrapper .fa-star {
+  font-size: 2.5em;
+  margin: 10px;
 }
