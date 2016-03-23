@@ -28,8 +28,11 @@
             });
         }
 
-        function addWine(name, varietal, year, rating) {
-            console.log('Adding wine: ' + name + ' ' + varietal + ' ' + year);
+        function addWine(wineObj) {
+            console.log('Adding wine: ' + wineObj.name + ' ' + wineObj.varietal + ' ' + wineObj.year);
+            return $http.post('/wine/add', wineObj).then(function(response) {
+                return response.data;
+            });
         }
 
         function linkWineToExternalWine(wineId, externalId) {

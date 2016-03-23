@@ -46,7 +46,8 @@
         }
 
         function addWine(wineObj) {
-
+            wines.push(wineObj);
+            return wines;
         }
     }
 })();

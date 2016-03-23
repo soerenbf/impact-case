@@ -16,6 +16,12 @@
             return makeResponseWithData(DataModel.getWineById(wineId));
         });
 
+        $httpBackend.whenPOST(/\/wine\/add/).respond(function(method, url, data) {
+            var wineObj = JSON.parse(data);
+            console.log(wineObj);
+            return makeResponseWithData(DataModel.addWine(wineObj));
+        });
+
         $httpBackend.whenGET(/\http:\/\/services\.wine\.com\/api/).passThrough();
         $httpBackend.whenGET(/\.html/).passThrough();
 

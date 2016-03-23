@@ -16,9 +16,9 @@
         vm.newWineButtonText = vm.showNewWine ? '-' : '+';
         vm.newWine = {name: '', varietal: '', year: '', rating: 0};
         vm.toggleNewWine = toggleNewWine;
+        vm.addWine = addWine;
         vm.setRating = setRating;
         vm.starIsInactive = starIsInactive;
-        vm.submitNewWine = submitNewWine;
 
         activate();
 
@@ -41,10 +41,11 @@
             }
         }
 
-        function addWine(name, varietal, year, rating) {
-            dataservice.addWine(name, varietal, year)/*.then(function(wines) {
+        function addWine() {
+            dataservice.addWine(vm.newWine).then(function(wines) {
                 vm.wines = wines;
-            })*/;
+                console.log(wines);
+            });
         }
 
         function setRating(rating) {
@@ -53,10 +54,6 @@
 
         function starIsInactive(index) {
             return index > vm.newWine.rating;
-        }
-
-        function submitNewWine() {
-
         }
 
         function resetForm() {
