@@ -61,6 +61,7 @@
             vm.newWine.varietal = '';
             vm.newWine.year = '';
             vm.newWine.rating = 0;
+            $scope.$root.$broadcast('ratingReset');
         }
     }
 })();

@@ -1,6 +1,6 @@
 <div class="row" id="wine-list" class="clearfix">
-    <div ng-show="listCtrl.showNewWine" list-item class="col-xs-12 wine-item"></div>
-    <a list-item ui-sref="wine({id: wine.id})" class="col-xs-12 wine-item" ng-repeat="wine in listCtrl.wines | orderBy: wine.name" title="{{wine.name}}"></a>
+    <div list-item ng-show="listCtrl.showNewWine" class="col-xs-12 wine-item"></div>
+    <a list-item ui-sref="wine({id: wine.id})" class="col-xs-12 wine-item" ng-repeat="wine in listCtrl.wines" title="{{wine.name}}"></a>
 </div>
 <div id="new-wine-container" class="row" ng-class="{active: listCtrl.showNewWine}">
     <button type="button" name="+" class="btn btn-default" ng-click="listCtrl.toggleNewWine()" id="toggle-new-wine-btn">{{listCtrl.newWineButtonText}}</button>
