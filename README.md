@@ -2,7 +2,7 @@
 
 ## Setting up the project
 
-**Installation can be done either through cloning the git repository or downloading the app.zip folder (navigate to file, click "view raw"), which includes the application structure needed to run the application.**
+Installation can be done either through **cloning the git repository (look below for prerequisites)** or **downloading the app.zip folder (navigate to file, click "view raw" - no prerquisites needed)**, which includes the application structure needed to run the application.
 
 ### Prerequisites
 
