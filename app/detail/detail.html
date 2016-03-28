@@ -1,12 +1,27 @@
 <div id="detail" class="row">
     <div class="content col-xs-12">
         <h3>{{detailCtrl.name}}</h3>
-        <ul class="list-inline">
-            <li>{{detailCtrl.varietal}}</li>
-            <li>{{detailCtrl.year}}</li>
-        </ul>
-        <img ng-if="detailCtrl.imageUrl" ng-src="{{detailCtrl.imageUrl}}" alt="" />
+        <div class="info-list-wrapper">
+            <ul class="list-inline">
+                <li ng-if="detailCtrl.varietal">{{detailCtrl.varietal}}</li>
+                <li ng-if="detailCtrl.year">{{detailCtrl.year}}</li>
+            </ul>
+        </div>
+        <img ng-if="detailCtrl.externalId" ng-src="{{detailCtrl.imageUrl}}" alt="" />
         <wine-rating rating="{{detailCtrl.rating}}"></wine-rating>
-        <div ng-if="detailCtrl.category" id="wine-category">#{{detailCtrl.category}}</div>
+        <div ng-if="detailCtrl.externalId" id="wine-category">#{{detailCtrl.category}}</div>
+    </div>
+    <div class="external-link-wrapper col-xs-12" ng-hide="detailCtrl.externalId">
+        <div class="row" id="external-links" ng-if="detailCtrl.externalLinks">
+            <h4>Are any of these the wine you're looking for?</h4>
+            <div class="external-link clearfix" ng-repeat="ext in detailCtrl.externalLinks" ng-click="detailCtrl.linkWithApi(ext.externalId)">
+                <div class="col-xs-4 image">
+                    <img ng-src="{{ext.imageUrl}}" alt="" />
+                </div>
+                <div class="col-xs-8 title">
+                    {{ext.name}}
+                </div>
+            </div>
+        </div>
     </div>
 </div>

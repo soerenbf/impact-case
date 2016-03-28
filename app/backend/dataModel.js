@@ -15,6 +15,7 @@
         this.getWines = getWines;
         this.getWineById = getWineById;
         this.addWine = addWine;
+        this.linkWine = linkWine;
 
         activate();
 
@@ -46,8 +47,37 @@
         }
 
         function addWine(wineObj) {
+            var topId = 0;
+            var wine;
+
+            for (var i = 0; i < wines.length; i++) {
+                wine = wines[i];
+
+                if (wine.id > topId) {
+                    topId = wine.id;
+                }
+            }
+
+            wineObj.id = topId + 1;
+            console.log(wineObj.id);
+
             wines.push(wineObj);
             return wines;
+        }
+
+        function linkWine(id, externalLink) {
+            var wine;
+
+            for (var i = 0; i < wines.length; i++) {
+                wine = wines[i];
+
+                if (wine.id == id) {
+                    wine.externalId = externalLink.externalId;
+                    return wine;
+                }
+            }
+
+            return;
         }
     }
 })();

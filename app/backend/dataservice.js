@@ -15,6 +15,8 @@
         this.getWineById = getWineById;
         this.addWine = addWine;
         this.getExternalWineInfo = getExternalWineInfo;
+        this.searchExternalApi = searchExternalApi;
+        this.linkWineToExternalWine = linkWineToExternalWine;
 
         function getWines() {
             return $http.get('/wines').then(function(response) {
@@ -29,28 +31,50 @@
         }
 
         function addWine(wineObj) {
-            console.log('Adding wine: ' + wineObj.name + ' ' + wineObj.varietal + ' ' + wineObj.year);
             return $http.post('/wine/add', wineObj).then(function(response) {
                 return response.data;
             });
         }
 
-        function linkWineToExternalWine(wineId, externalId) {
-            console.log('Linking wine: ' + wineId + ' and ' + externalId);
+        function searchExternalApi(name, varietal, year) {
+            var url = apiBasePath + '?search=' + name + '+' + varietal + '+' + year + '&size=3&offset=0&apikey=' + common.wineApiKey;
+            return $http.get(url).then(function(response) {
+                var wines = [];
+                var wineList = response.data.Products.List;
+
+                for (var i = 0; i < wineList.length; i++) {
+                    var externalWine = wineList[i];
+                    
+                    var wine = {
+                        name: externalWine.Name,
+                        externalId: externalWine.Id,
+                        imageUrl: externalWine.Labels[0].Url
+                    };
+
+                    wines.push(wine);
+                }
+
+                return wines;
+            });
+        }
+
+        function linkWineToExternalWine(wineId, externalLink) {
+            var link = {id: wineId, ext: externalLink};
+            return $http.post('/wine/link', link).then(function(response) {
+                return response.data;
+            });
         }
 
         function getExternalWineInfo(externalId) {
             var url = apiBasePath + '?filter=product(' + externalId + ')&apikey=' + common.wineApiKey;
-            console.log(externalId);
             return $http.get(url).then(function(response) {
-                var wine = response.data.Products.List[0];
-                console.log(wine);
+                var externalWine = response.data.Products.List[0];
 
-                var obj = {
-                    category: wine.Varietal.WineType.Name,
-                    imageUrl: wine.Labels[1].Url
+                var wine = {
+                    category: externalWine.Varietal.WineType.Name,
+                    imageUrl: externalWine.Labels[1].Url
                 };
-                return obj;
+                return wine;
             });
         }
     }

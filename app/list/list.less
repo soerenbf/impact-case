@@ -1,5 +1,31 @@
 @import "../app.less";
 
+#wine-sort {
+    height: 40px;
+    width: 100%;
+    background: @main-color;
+
+    .sort-button {
+        width: 33%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        float: left;
+        height: 100%;
+        background: none;
+        color: @white;
+        outline: none;
+
+        .fa-star {
+            color: @white;
+        }
+    }
+
+    .sort-button.active {
+        
+    }
+}
+
 #wine-list {
     .wine-item {
         border-bottom: 1px solid @silver;

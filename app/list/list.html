@@ -1,6 +1,13 @@
+<div class="row">
+    <div class="col-xs-12" id="wine-sort">
+        <button type="button" class="sort-button" ng-click="listCtrl.sortBy('name')" ng-class="{active: listCtrl.isSorting('name')}">Name</button>
+        <button type="button" class="sort-button" ng-click="listCtrl.sortBy('rating')" ng-class="{active: listCtrl.isSorting('rating')}"><i class="fa fa-star"></i></button>
+        <button type="button" class="sort-button" ng-click="listCtrl.sortBy('year')" ng-class="{active: listCtrl.isSorting('year')}">Year</button>
+    </div>
+</div>
 <div class="row" id="wine-list" class="clearfix">
     <div list-item ng-show="listCtrl.showNewWine" class="col-xs-12 wine-item"></div>
-    <a list-item ui-sref="wine({id: wine.id})" class="col-xs-12 wine-item" ng-repeat="wine in listCtrl.wines" title="{{wine.name}}"></a>
+    <a list-item ui-sref="wine({id: wine.id})" class="col-xs-12 wine-item" ng-repeat="wine in listCtrl.wines | orderBy: listCtrl.sortPredicate" title="{{wine.name}}"></a>
 </div>
 <div id="new-wine-container" class="row" ng-class="{active: listCtrl.showNewWine}">
     <button type="button" name="+" class="btn btn-default" ng-click="listCtrl.toggleNewWine()" id="toggle-new-wine-btn">{{listCtrl.newWineButtonText}}</button>

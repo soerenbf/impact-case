@@ -63,3 +63,18 @@ body .fa-star.grey {
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+#detail #external-links h4 {
+  text-align: center;
+  color: #4c4c4c;
+  font-size: 1em;
+}
+#detail #external-links .external-link {
+  margin: 20px;
+  border: 2px solid #c0392b;
+}
+#detail #external-links .external-link .title {
+  margin-top: 15px;
+}
+#detail #external-links .external-link img {
+  width: 70%;
+}

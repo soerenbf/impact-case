@@ -30,6 +30,25 @@ body .fa-star {
 body .fa-star.grey {
   color: #bdc3c7;
 }
+#wine-sort {
+  height: 40px;
+  width: 100%;
+  background: #c0392b;
+}
+#wine-sort .sort-button {
+  width: 33%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  float: left;
+  height: 100%;
+  background: none;
+  color: #ffffff;
+  outline: none;
+}
+#wine-sort .sort-button .fa-star {
+  color: #ffffff;
+}
 #wine-list .wine-item {
   border-bottom: 1px solid #bdc3c7;
   height: 90px;
