@@ -9,7 +9,7 @@
             </ul>
         </div>
         <img ng-if="detailCtrl.externalId" ng-src="{{detailCtrl.imageUrl}}" alt="" />
-        <wine-rating rating="{{detailCtrl.rating}}"></wine-rating>
+        <div wine-rating rating="{{detailCtrl.rating}}"></div>
         <div ng-if="detailCtrl.externalId" id="wine-category">#{{detailCtrl.category}}</div>
     </div>
     <div class="external-link-wrapper col-xs-12" ng-hide="detailCtrl.externalId">

@@ -77,7 +77,7 @@ body input {
 }
 #wine-list .wine-item {
   border-bottom: 1px solid #bdc3c7;
-  height: 90px;
+  min-height: 90px;
 }
 #wine-list .wine-item .wine-rating-wrapper {
   position: relative;
