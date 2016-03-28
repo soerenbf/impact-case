@@ -5,6 +5,7 @@
             <ul class="list-inline">
                 <li ng-if="detailCtrl.varietal">{{detailCtrl.varietal}}</li>
                 <li ng-if="detailCtrl.year">{{detailCtrl.year}}</li>
+                <li ng-if="detailCtrl.price">{{detailCtrl.price | currency}}</li>
             </ul>
         </div>
         <img ng-if="detailCtrl.externalId" ng-src="{{detailCtrl.imageUrl}}" alt="" />

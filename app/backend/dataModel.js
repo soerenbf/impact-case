@@ -59,7 +59,6 @@
             }
 
             wineObj.id = topId + 1;
-            console.log(wineObj.id);
 
             wines.push(wineObj);
             return wines;

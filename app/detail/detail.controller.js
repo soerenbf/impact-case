@@ -22,8 +22,9 @@
         vm.externalId = wineData.externalId;
 
         //From api.wine.com
-        vm.imageUrl = wineData.imageUrl;
-        vm.category = wineData.category;
+        vm.imageUrl;
+        vm.category;
+        vm.price;
         vm.externalLinks;
 
         vm.linkWithApi = linkWithApi;
@@ -42,6 +43,7 @@
             dataservice.getExternalWineInfo(externalId).then(function(wineInfo) {
                 vm.category = wineInfo.category;
                 vm.imageUrl = wineInfo.imageUrl;
+                vm.price = wineInfo.price;
             });
         }
 

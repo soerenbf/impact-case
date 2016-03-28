@@ -12,19 +12,16 @@
 
         $httpBackend.whenGET(/\/wine\/\d+/).respond(function(method, url, data) {
             var wineId = url.split('/')[2];
-            console.log('wine id: ' + wineId);
             return makeResponseWithData(DataModel.getWineById(wineId));
         });
 
         $httpBackend.whenPOST(/\/wine\/add/).respond(function(method, url, data) {
             var wineObj = JSON.parse(data);
-            console.log(wineObj);
             return makeResponseWithData(DataModel.addWine(wineObj));
         });
 
         $httpBackend.whenPOST(/\/wine\/link/).respond(function(method, url, data) {
             var link = JSON.parse(data);
-            console.log(link);
             return makeResponseWithData(DataModel.linkWine(link.id, link.ext));
         });
 

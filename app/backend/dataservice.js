@@ -70,10 +70,12 @@
             var url = apiBasePath + '?filter=product(' + externalId + ')&apikey=' + apiKey;
             return $http.get(url).then(function(response) {
                 var externalWine = response.data.Products.List[0];
+                console.log(externalWine);
 
                 var wine = {
                     category: externalWine.Varietal.WineType.Name,
-                    imageUrl: externalWine.Labels[1].Url
+                    imageUrl: externalWine.Labels[1].Url,
+                    price: externalWine.PriceMin
                 };
                 return wine;
             });
