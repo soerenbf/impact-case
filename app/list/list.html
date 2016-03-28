@@ -16,21 +16,23 @@
     <div list-item ng-show="listCtrl.showNewWine" class="col-xs-12 wine-item"></div>
     <a list-item ui-sref="wine({id: wine.id})" class="col-xs-12 wine-item" ng-repeat="wine in listCtrl.wines | orderBy: listCtrl.sortPredicate | filter: listCtrl.search" title="{{wine.name}}"></a>
 </div>
-<div id="new-wine-container" class="row" ng-class="{active: listCtrl.showNewWine}">
-    <button type="button" name="+" class="btn btn-default" ng-click="listCtrl.toggleNewWine()" id="toggle-new-wine-btn">{{listCtrl.newWineButtonText}}</button>
-    <div class="col-xs-12">
-        <form>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Name, e.g. Masi Costasera" ng-model="listCtrl.newWine.name">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Varietal of wine, e.g. Amarone" ng-model="listCtrl.newWine.varietal">
-            </div>
-            <div class="form-group">
-                <input type="number" class="form-control" placeholder="Year of production, e.g 2010" ng-model="listCtrl.newWine.year">
-            </div>
-            <wine-rating interactive></wine-rating>
-            <button type="submit" class="btn btn-default" id="submit-wine-btn" ng-click="listCtrl.addWine()">Add wine</button>
-        </form>
+<div id="new-wine-container" class="container" ng-class="{active: listCtrl.showNewWine}">
+    <div class="row">
+        <button type="button" name="+" class="btn btn-default" ng-click="listCtrl.toggleNewWine()" id="toggle-new-wine-btn">{{listCtrl.newWineButtonText}}</button>
+        <div class="col-xs-12">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name, e.g. Masi Costasera" ng-model="listCtrl.newWine.name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Varietal of wine, e.g. Amarone" ng-model="listCtrl.newWine.varietal">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" placeholder="Year of production, e.g 2010" ng-model="listCtrl.newWine.year">
+                </div>
+                <wine-rating interactive></wine-rating>
+                <button type="submit" class="btn btn-default" id="submit-wine-btn" ng-click="listCtrl.addWine()">Add wine</button>
+            </form>
+        </div>
     </div>
 </div>
