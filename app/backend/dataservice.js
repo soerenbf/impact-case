@@ -5,11 +5,12 @@
         .module('app')
         .service('dataservice', dataservice);
 
-    dataservice.$inject = ['$http', 'common'];
+    dataservice.$inject = ['$http'];
 
     /* @ngInject */
-    function dataservice($http, common) {
+    function dataservice($http) {
         var apiBasePath = 'http://services.wine.com/api/beta2/service.svc/JSON/catalog';
+        var apiKey = 'c332a87bf233acb72799d59531a09cdc';
 
         this.getWines = getWines;
         this.getWineById = getWineById;
@@ -37,14 +38,14 @@
         }
 
         function searchExternalApi(name, varietal, year) {
-            var url = apiBasePath + '?search=' + name + '+' + varietal + '+' + year + '&size=3&offset=0&apikey=' + common.wineApiKey;
+            var url = apiBasePath + '?search=' + name + '+' + varietal + '+' + year + '&size=3&offset=0&apikey=' + apiKey;
             return $http.get(url).then(function(response) {
                 var wines = [];
                 var wineList = response.data.Products.List;
 
                 for (var i = 0; i < wineList.length; i++) {
                     var externalWine = wineList[i];
-                    
+
                     var wine = {
                         name: externalWine.Name,
                         externalId: externalWine.Id,
@@ -66,7 +67,7 @@
         }
 
         function getExternalWineInfo(externalId) {
-            var url = apiBasePath + '?filter=product(' + externalId + ')&apikey=' + common.wineApiKey;
+            var url = apiBasePath + '?filter=product(' + externalId + ')&apikey=' + apiKey;
             return $http.get(url).then(function(response) {
                 var externalWine = response.data.Products.List[0];
 
