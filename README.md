@@ -2,6 +2,8 @@
 
 ## Setting up the project
 
+NOTE: Installation can be done either through cloning the git repository or downloading the app.zip folder, which includes the application structure needed to run the application.
+
 ### Prerequisites
 
 You need git to clone the angular-seed-styleguided repository. You can get git from
@@ -30,3 +32,14 @@ This will run both npm install and bower install to fetch the required node modu
 Now browse to the app at `http://localhost:8000`.
 
 ## Choices made (in regards to case specification)
+
+This section serves to document the functionality implemented.
+
+### Functionality
+
+* Sort wines by name, rating, year (all can toggle ascending/descending sorting fashion)
+* Search in the list of wines
+* Add wine + rating to wines
+* Detailed view displaying wine info
+* If no link to api.wine.com exists, search for wines by the available parameters and display linking options
+* Link wine to external API
