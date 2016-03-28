@@ -43,10 +43,16 @@ body .fa-star.grey {
   float: left;
   height: 100%;
   background: none;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.5);
   outline: none;
 }
 #wine-sort .sort-button .fa-star {
+  color: rgba(255, 255, 255, 0.5);
+}
+#wine-sort .sort-button.active {
+  color: #ffffff;
+}
+#wine-sort .sort-button.active .fa-star {
   color: #ffffff;
 }
 #wine-list .wine-item {
