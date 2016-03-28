@@ -30,6 +30,10 @@ body .fa-star {
 body .fa-star.grey {
   color: #bdc3c7;
 }
+body input {
+  width: 100%;
+  height: 35px;
+}
 #detail h3 {
   margin: 20px 0 5px 0;
   text-align: center;

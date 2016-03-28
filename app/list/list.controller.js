@@ -15,6 +15,7 @@
         vm.showNewWine = false;
         vm.newWineButtonText = vm.showNewWine ? '-' : '+';
         vm.sortPredicate = 'name';
+        vm.search = '';
         vm.newWine = {name: '', varietal: '', year: '', rating: 0};
         vm.sortBy = sortBy;
         vm.isSorting = isSorting;

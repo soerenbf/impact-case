@@ -30,3 +30,7 @@ body .fa-star {
 body .fa-star.grey {
   color: #bdc3c7;
 }
+body input {
+  width: 100%;
+  height: 35px;
+}
