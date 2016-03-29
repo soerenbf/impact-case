@@ -33,6 +33,9 @@
         }
 
         function getWineById(id) {
+
+            //return wines.filter((wine)=>wine.id=id)[0];
+
             var wine;
 
             for (var i = 0; i < wines.length; i++) {
@@ -67,7 +70,7 @@
         function linkWine(id, externalLink) {
             var wine = getWineById(id);
             wine.externalId = externalLink.externalId;
-            
+
             return wine;
         }
     }
