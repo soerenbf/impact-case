@@ -59,24 +59,16 @@
             }
 
             wineObj.id = topId + 1;
-
             wines.push(wineObj);
+
             return wines;
         }
 
         function linkWine(id, externalLink) {
-            var wine;
-
-            for (var i = 0; i < wines.length; i++) {
-                wine = wines[i];
-
-                if (wine.id == id) {
-                    wine.externalId = externalLink.externalId;
-                    return wine;
-                }
-            }
-
-            return;
+            var wine = getWineById(id);
+            wine.externalId = externalLink.externalId;
+            
+            return wine;
         }
     }
 })();
